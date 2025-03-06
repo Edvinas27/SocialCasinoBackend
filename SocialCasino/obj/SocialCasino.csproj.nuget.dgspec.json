@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\edvin\\RiderProjects\\SocialCasino\\SocialCasino\\SocialCasino.csproj": {}
+    "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\SocialCasino.csproj": {}
   },
   "projects": {
-    "C:\\Users\\edvin\\RiderProjects\\SocialCasino\\SocialCasino\\SocialCasino.csproj": {
+    "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\SocialCasino.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\edvin\\RiderProjects\\SocialCasino\\SocialCasino\\SocialCasino.csproj",
+        "projectUniqueName": "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\SocialCasino.csproj",
         "projectName": "SocialCasino",
-        "projectPath": "C:\\Users\\edvin\\RiderProjects\\SocialCasino\\SocialCasino\\SocialCasino.csproj",
+        "projectPath": "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\SocialCasino.csproj",
         "packagesPath": "C:\\Users\\edvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\edvin\\RiderProjects\\SocialCasino\\SocialCasino\\obj\\",
+        "outputPath": "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\edvin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -46,6 +46,10 @@
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.3.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",

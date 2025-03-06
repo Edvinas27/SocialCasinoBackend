@@ -21,7 +21,7 @@ namespace SocialCasino.Migrations
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Balance = table.Column<long>(type: "bigint", nullable: false),
+                    Balance = table.Column<long>(type: "decimal", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },

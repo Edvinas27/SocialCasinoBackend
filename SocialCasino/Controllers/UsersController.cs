@@ -1,6 +1,8 @@
-using Microsoft.AspNetCore.Http;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using SocialCasino.JWT;
 using SocialCasino.Models;
 
 namespace SocialCasino.Controllers
@@ -10,10 +12,14 @@ namespace SocialCasino.Controllers
     public class UsersController : ControllerBase
     {
         private readonly MyDbContext _context;
+        private readonly TokenGenerator _tokenGenerator;
+        private readonly IConfiguration _configuration;
 
-        public UsersController(MyDbContext context)
+        public UsersController(MyDbContext context, TokenGenerator tokenGenerator, IConfiguration configuration)
         {
             _context = context;
+            _tokenGenerator = tokenGenerator;
+            _configuration = configuration;
         }
 
         [HttpPost]
@@ -51,6 +57,7 @@ namespace SocialCasino.Controllers
 
             if (user is not null)
             {
+                var token = _tokenGenerator.GenerateToken(user.UserId);
                 var secureReturn = new
                 {
                     user.UserId,
@@ -58,7 +65,9 @@ namespace SocialCasino.Controllers
                     user.LastName,
                     user.Email,
                     user.IsActive,
-                    user.CreatedAt
+                    user.CreatedAt,
+                    //this token will be deleted
+                    Token = token
                 };
                 return Ok(secureReturn);
             }
@@ -78,6 +87,19 @@ namespace SocialCasino.Controllers
         public IActionResult GetUser(int id)
         {
             var objUser = _context.Users.FirstOrDefault(data => data.UserId == id);
+            if (objUser is not null)
+            {
+                return Ok(objUser);
+            }
+            return NoContent();
+        }
+        
+        [HttpGet]
+        [Route("GetCurrentUser")]
+        public IActionResult GetCurrentUser()
+        {
+            var userId = int.Parse(User.FindFirstValue(JwtRegisteredClaimNames.Sub));
+            var objUser = _context.Users.FirstOrDefault(data => data.UserId == userId);
             if (objUser is not null)
             {
                 return Ok(objUser);
@@ -114,6 +136,24 @@ namespace SocialCasino.Controllers
                 _context.SaveChanges();
                 return Ok("User deleted successfully");
             }
+
+            return NoContent();
+        }
+
+        [HttpPut]
+        [Route("AddBalance")]
+        [Authorize]
+        public IActionResult AddBalance(int id, decimal amount)
+        {
+            var userId = int.Parse(User.FindFirstValue(JwtRegisteredClaimNames.Sub));
+            var objUser = _context.Users.FirstOrDefault(data => data.UserId == userId);
+            if (objUser is not null)
+            {
+                objUser.Balance += amount;
+                _context.SaveChanges();
+                return Ok("Balance added successfully");
+            }
+
             return NoContent();
         }
     }

@@ -30,8 +30,8 @@ namespace SocialCasino.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
 
-                    b.Property<long>("Balance")
-                        .HasColumnType("bigint");
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
