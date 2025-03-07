@@ -8063,19 +8063,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\edvin\\.nuget\\packages\\": {}
+    "/Users/edvinas/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\SocialCasino.csproj",
+      "projectUniqueName": "/Users/edvinas/RiderProjects/SocialCasinoBackend/SocialCasino/SocialCasino.csproj",
       "projectName": "SocialCasino",
-      "projectPath": "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\SocialCasino.csproj",
-      "packagesPath": "C:\\Users\\edvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\obj\\",
+      "projectPath": "/Users/edvinas/RiderProjects/SocialCasinoBackend/SocialCasino/SocialCasino.csproj",
+      "packagesPath": "/Users/edvinas/.nuget/packages/",
+      "outputPath": "/Users/edvinas/RiderProjects/SocialCasinoBackend/SocialCasino/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\edvin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/edvinas/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -8164,7 +8164,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/edvinas/.dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
