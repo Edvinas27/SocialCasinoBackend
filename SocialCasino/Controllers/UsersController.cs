@@ -23,7 +23,7 @@ namespace SocialCasino.Controllers
         }
 
         [HttpPost]
-        [Route("Registration")]
+        [Route("Register")]
         public IActionResult Registration(UserDto userDto)
         {
             if (!ModelState.IsValid)
@@ -64,7 +64,7 @@ namespace SocialCasino.Controllers
                     user.FirstName,
                     user.LastName,
                     user.Email,
-                    user.IsActive,
+                    user.IsActive,  
                     user.CreatedAt,
                     //this token will be deleted
                     Token = token
