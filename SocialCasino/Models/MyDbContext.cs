@@ -11,4 +11,5 @@ public class MyDbContext : DbContext
     }
     
     public DbSet<User> Users { get; set; }
+    public DbSet<CreditCard> CreditCards { get; set; }
 }

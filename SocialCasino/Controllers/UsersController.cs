@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SocialCasino.JWT;
 using SocialCasino.Models;
+using SocialCasino.Services;
 
 namespace SocialCasino.Controllers
 {
@@ -14,12 +15,14 @@ namespace SocialCasino.Controllers
         private readonly MyDbContext _context;
         private readonly TokenGenerator _tokenGenerator;
         private readonly IConfiguration _configuration;
+        private readonly FakeCreditCardService _fakeCreditCardService;
 
-        public UsersController(MyDbContext context, TokenGenerator tokenGenerator, IConfiguration configuration)
+        public UsersController(MyDbContext context, TokenGenerator tokenGenerator, IConfiguration configuration, FakeCreditCardService fakeCreditCardService)
         {
             _context = context;
             _tokenGenerator = tokenGenerator;
             _configuration = configuration;
+            _fakeCreditCardService = fakeCreditCardService;
         }
 
         [HttpPost]
@@ -155,6 +158,37 @@ namespace SocialCasino.Controllers
             }
 
             return NoContent();
+        }
+
+        // will be used for simulation
+        [HttpGet]
+        [Route("GenerateCreditCard")]
+        public IActionResult GenerateCreditCard(decimal balance)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var fakeCreditCard = _fakeCreditCardService.GenerateCreditCard(balance);
+
+            var newCreditCard = new CreditCard
+            {
+                CardNumber = fakeCreditCard.CardNumber,
+                ExpiryMonth = fakeCreditCard.ExpiryMonth,
+                ExpiryYear = fakeCreditCard.ExpiryYear,
+                CVV = fakeCreditCard.CVV,
+                Balance = fakeCreditCard.Balance
+            };
+
+            _context.CreditCards.Add(newCreditCard);
+
+            var zeroBalanceCards = _context.CreditCards.Where(card => card.Balance == 0).ToList();
+            _context.CreditCards.RemoveRange(zeroBalanceCards);
+
+            _context.SaveChanges();
+            
+            return Ok(newCreditCard);
         }
     }
 }

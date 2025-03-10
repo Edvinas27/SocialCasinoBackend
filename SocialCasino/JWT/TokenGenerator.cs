@@ -4,7 +4,6 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
 namespace SocialCasino.JWT;
-/*Vps sito nesupratau XD, o bicas aiskino lyg cia legnviausias dalykas pasaulyje*/
 public class TokenGenerator
 {
     private readonly IConfiguration _configuration;

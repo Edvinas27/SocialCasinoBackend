@@ -576,3 +576,7 @@ C:\Users\edvin\RiderProjects\SocialCasinoBackend\SocialCasino\obj\Debug\net8.0\r
 C:\Users\edvin\RiderProjects\SocialCasinoBackend\SocialCasino\obj\Debug\net8.0\SocialCasino.pdb
 C:\Users\edvin\RiderProjects\SocialCasinoBackend\SocialCasino\obj\Debug\net8.0\SocialCasino.genruntimeconfig.cache
 C:\Users\edvin\RiderProjects\SocialCasinoBackend\SocialCasino\obj\Debug\net8.0\ref\SocialCasino.dll
+C:\Users\edvin\RiderProjects\SocialCasinoBackend\SocialCasino\bin\Debug\net8.0\Bogus.dll
+C:\Users\edvin\RiderProjects\SocialCasinoBackend\SocialCasino\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\edvin\RiderProjects\SocialCasinoBackend\SocialCasino\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\edvin\RiderProjects\SocialCasinoBackend\SocialCasino\bin\Debug\net8.0\Microsoft.Extensions.Features.dll

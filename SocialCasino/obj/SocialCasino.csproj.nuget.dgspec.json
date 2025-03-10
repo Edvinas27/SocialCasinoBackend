@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/edvinas/RiderProjects/SocialCasinoBackend/SocialCasino/SocialCasino.csproj": {}
+    "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\SocialCasino.csproj": {}
   },
   "projects": {
-    "/Users/edvinas/RiderProjects/SocialCasinoBackend/SocialCasino/SocialCasino.csproj": {
+    "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\SocialCasino.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/edvinas/RiderProjects/SocialCasinoBackend/SocialCasino/SocialCasino.csproj",
+        "projectUniqueName": "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\SocialCasino.csproj",
         "projectName": "SocialCasino",
-        "projectPath": "/Users/edvinas/RiderProjects/SocialCasinoBackend/SocialCasino/SocialCasino.csproj",
-        "packagesPath": "/Users/edvinas/.nuget/packages/",
-        "outputPath": "/Users/edvinas/RiderProjects/SocialCasinoBackend/SocialCasino/obj/",
+        "projectPath": "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\SocialCasino.csproj",
+        "packagesPath": "C:\\Users\\edvin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\edvin\\RiderProjects\\SocialCasinoBackend\\SocialCasino\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/edvinas/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\edvin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -43,6 +43,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.6.2, )"
+            },
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.3.0, )"
@@ -54,6 +58,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.13, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Common": {
+              "target": "Package",
+              "version": "[9.0.2, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -103,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/edvinas/.dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
